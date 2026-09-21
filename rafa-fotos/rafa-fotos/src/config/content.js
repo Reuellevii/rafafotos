@@ -83,7 +83,7 @@ export const SERVICOS = [
     id: 'newborn',
     titulo: 'Newborn',
     descricao: 'Fotografias cuidadosas para preservar os primeiros momentos do bebê.',
-    imagem: '/images/servicos/newborn.jpg', // TEMPORÁRIA — substituir
+    imagem: '/images/servicos/newborn.jpg',
     alt: 'Bebê sorrindo em ensaio de acompanhamento',
     mensagem: 'Olá, Rafa! Gostaria de saber mais sobre o ensaio newborn.',
   },
