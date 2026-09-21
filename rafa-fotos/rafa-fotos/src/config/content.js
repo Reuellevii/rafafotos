@@ -96,12 +96,10 @@ export const SERVICOS = [
     mensagem: 'Olá, Rafa! Gostaria de saber mais sobre a fotografia infantil.',
   },
   {
-    id: 'eventos',
-    titulo: 'Eventos',
-    descricao: 'Cobertura fotográfica profissional para eventos e ocasiões especiais.',
-    imagem: '/images/servicos/eventos.jpg', // TEMPORÁRIA — substituir
-    alt: 'Família em azul e branco em momento de carinho',
-    mensagem: 'Olá, Rafa! Gostaria de saber mais sobre a cobertura fotográfica de eventos.',
+    id: 'aniversario',
+    titulo: 'Aniversários',
+    descricao: 'Cobertura fotográfica profissional para aniversários e momentos especiais.',
+    imagem: '/images/servicos/aniversario.jpg',
   },
 ]
 
