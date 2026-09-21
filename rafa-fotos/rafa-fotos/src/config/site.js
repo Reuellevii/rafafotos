@@ -21,7 +21,7 @@ export const CIDADE = 'Orós, Ceará'
 
 // Mensagem que abre no WhatsApp ao clicar no botão flutuante
 export const MENSAGEM_WHATSAPP_PADRAO =
-  'Olá, Rafa! Conheci seu trabalho pelo site e gostaria de saber mais sobre fotografia.'
+  'Olá, Rafa! Conheci seu trabalho pelo site e gostaria de saber mais sobre como funciona.'
 
 // Texto de anos de experiência (aparece em "Por trás das lentes" e nos diferenciais)
 export const ANOS_DE_EXPERIENCIA = '+20'
