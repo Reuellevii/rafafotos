@@ -138,12 +138,34 @@ export const FOTOGRAFIAS = [
     titulo: 'Olhar de aviador',
     categorias: ['Infantil'],
     width: 1200, height: 1800, ratio: '4 / 5', posicao: 'center 30%',
+
   },
   {
     src: '/images/portfolio/infantil-biblico-01.jpg',
     alt: 'Bebê sentado sobre um tapete com uma Bíblia aberta, pães e uvas',
     titulo: 'Bebê e a Bíblia',
     categorias: ['Infantil'],
+    width: 1200, height: 1800,
+  },
+  {
+    src: '/images/portfolio/newborn-01.jpg',
+    alt: 'Bebê recém-nascido dormindo em ensaio newborn',
+    titulo: 'Ensaio Newborn',
+    categorias: ['Newborn'],
+    width: 1200, height: 1800,
+  },
+  {
+    src: '/images/portfolio/newborn-02.jpg',
+    alt: 'Detalhes delicados em ensaio newborn',
+    titulo: 'Ensaio Newborn',
+    categorias: ['Newborn'],
+    width: 1200, height: 1800,
+  },
+  {
+    src: '/images/portfolio/newborn-03.jpg',
+    alt: 'Ensaio fotográfico de recém-nascido',
+    titulo: 'Ensaio Newborn',
+    categorias: ['Newborn'],
     width: 1200, height: 1800,
   },
 ]
