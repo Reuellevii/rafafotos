@@ -157,23 +157,20 @@ export const DEPOIMENTOS = [
   {
     nome: 'ines.araujo2',
     tipo: 'Ensaio estúdio',
-    foto: '',
+    foto: '/images/depoimentos/ines.png',
     texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente! Amei cada detalhe do meu ensaio fotográfico. Ficou simplesmente incrível! Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',
-    demo: true,
   },
   {
     nome: 'michelly_hayane',
     tipo: 'Acompanhamento',
-    foto: '',
+    foto: '/images/depoimentos/michelly.png',
     texto: 'Obrigada pelo trabalho e acompanhamento durante esse 1 ano da nossa Melinda. Trabalho e paciência sem igual com a nossa bebê! Que Deus continue abençoando sua profissão linda.',
-    demo: true,
   },
   {
     nome: 'rafaelakaeliny',
     tipo: 'Ensaio infantil',
-    foto: '',
+    foto: '/images/depoimentos/rafaela.png',
     texto: 'Minha princesa 😍 Obrigado pelo excelente trabalho.',
-    demo: true,
   },
 ]
 
