@@ -100,6 +100,8 @@ export const SERVICOS = [
     titulo: 'Aniversários',
     descricao: 'Cobertura fotográfica profissional para aniversários e momentos especiais.',
     imagem: '/images/servicos/aniversario.jpg',
+    alt: 'Decoração e momentos de festa de aniversário',
+    mensagem: 'Olá, Rafa! Gostaria de saber mais sobre a fotografia de aniversários.',
   },
 ]
 
