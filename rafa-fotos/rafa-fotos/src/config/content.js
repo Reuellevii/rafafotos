@@ -156,25 +156,23 @@ export const DEPOIMENTOS_SELO_DEMO = 'Depoimento demonstrativo'
 export const DEPOIMENTOS = [
   {
     nome: 'ines.araujo2',
-    tipo: 'Ensaio estudio',
+    tipo: 'Ensaio estúdio',
     foto: '',
-    texto: 'texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente! Amei cada detalhe do meu ensaio fotográfico. Ficou simplesmente incrível! Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',',
+    texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente! Amei cada detalhe do meu ensaio fotográfico. Ficou simplesmente incrível! Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',
     demo: true,
   },
   {
     nome: 'michelly_hayane',
     tipo: 'Acompanhamento',
     foto: '',
-    texto: 'Obrigada pelo trabalho e acompanhamento durante esse 1 ano da nossa Melinda. Trabalho e paciência sem igual com a nossa bebe! que
-Deus continue abençoando sua profissão linda.',
+    texto: 'Obrigada pelo trabalho e acompanhamento durante esse 1 ano da nossa Melinda. Trabalho e paciência sem igual com a nossa bebê! Que Deus continue abençoando sua profissão linda.',
     demo: true,
   },
   {
     nome: 'rafaelakaeliny',
-    tipo: 'Ensaio de infantil',
+    tipo: 'Ensaio infantil',
     foto: '',
-    texto: 'Minha princesa 😍 
-obg pelo excelente trabalho.',
+    texto: 'Minha princesa 😍 Obrigado pelo excelente trabalho.',
     demo: true,
   },
 ]
