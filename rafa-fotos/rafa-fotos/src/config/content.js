@@ -155,24 +155,29 @@ export const DEPOIMENTOS_SELO_DEMO = 'Depoimento demonstrativo'
 
 export const DEPOIMENTOS = [
   {
-    nome: 'Nome do cliente',
-    tipo: 'Ensaio gestante',
+    nome: 'ines.araujo2',
+    tipo: 'Ensaio estudio',
     foto: '',
-    texto: 'Aqui vai o depoimento real de um cliente sobre a experiência com o Rafa Fotos.',
+    texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente!
+Amei cada detalhe do meu ensaio fotográfico.
+Ficou simplesmente incrivel!
+Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',
     demo: true,
   },
   {
-    nome: 'Nome do cliente',
-    tipo: 'Ensaio infantil',
+    nome: 'michelly_hayane',
+    tipo: 'Acompanhamento',
     foto: '',
-    texto: 'Aqui vai o depoimento real de um cliente sobre a experiência com o Rafa Fotos.',
+    texto: 'Obrigada pelo trabalho e acompanhamento durante esse 1 ano da nossa Melinda. Trabalho e paciência sem igual com a nossa bebe! que
+Deus continue abençoando sua profissão linda.',
     demo: true,
   },
   {
-    nome: 'Nome do cliente',
-    tipo: 'Ensaio de família',
+    nome: 'rafaelakaeliny',
+    tipo: 'Ensaio de infantil',
     foto: '',
-    texto: 'Aqui vai o depoimento real de um cliente sobre a experiência com o Rafa Fotos.',
+    texto: 'Minha princesa 😍 
+obg pelo excelente trabalho.',
     demo: true,
   },
 ]
