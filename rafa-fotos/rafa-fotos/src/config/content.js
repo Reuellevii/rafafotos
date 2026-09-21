@@ -158,10 +158,7 @@ export const DEPOIMENTOS = [
     nome: 'ines.araujo2',
     tipo: 'Ensaio estudio',
     foto: '',
-    texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente!
-Amei cada detalhe do meu ensaio fotográfico.
-Ficou simplesmente incrivel!
-Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',
+    texto: 'texto: 'Rafael, eu que te agradeço por ter sido um profissional tão paciente! Amei cada detalhe do meu ensaio fotográfico. Ficou simplesmente incrível! Grata por toda atenção e cuidado em cada momento. Você fez toda a diferença com seu profissionalismo!',',
     demo: true,
   },
   {
