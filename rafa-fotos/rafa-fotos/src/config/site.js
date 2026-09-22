@@ -8,7 +8,7 @@ export const NOME_DA_MARCA = 'Rafa Fotos'
 // Número do WhatsApp: só números, com código do país (55) + DDD + número.
 // Exemplo: 5588999999999
 // ⚠ CONFIRA se este número está completo (celulares no Brasil costumam ter 9 dígitos após o DDD).
-export const WHATSAPP_NUMBER = '558882313723'
+export const WHATSAPP_NUMBER = '5588999137573'
 
 // Link do Instagram. Se deixar vazio (''), os ícones do Instagram somem do site.
 export const INSTAGRAM_URL = 'https://www.instagram.com/rafafotosoros'
