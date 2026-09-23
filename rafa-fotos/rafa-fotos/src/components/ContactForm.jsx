@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { CONTATO } from '../config/content'
 import { NOME_DA_MARCA, INSTAGRAM_URL, EMAIL, CIDADE } from '../config/site'
-import { whatsappLink } from '../lib/whatsapp'
-import { salvarLead } from '../lib/leads'
+import whatsappLink from '../lib/whatsapp'
+import salvarLead from '../lib/leads'
 import Reveal from './Reveal'
 import { IconInstagram, IconMail, IconPin, IconWhatsApp } from './Icons'
 
-const VAZIO = { nome: '', whatsapp: '', email: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
+const VAZIO = { nome: '', whatsapp: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
 
 // Data de hoje no formato aaaa-mm-dd (para bloquear datas passadas)
 const hojeISO = () => {
@@ -19,7 +19,7 @@ const hojeISO = () => {
 function mascaraTelefone(valor) {
   const n = valor.replace(/\D/g, '').slice(0, 11)
   if (n.length <= 2) return n
-  if (n.length <= 6) return `(${n.slice(0, 2)}) ${n.slice(2)}`
+  if (n.length <= 6) return `(${n.slice(0, 2)})${n.slice(2)}`
   if (n.length <= 10) return `(${n.slice(0, 2)}) ${n.slice(2, 6)}-${n.slice(6)}`
   return `(${n.slice(0, 2)}) ${n.slice(2, 7)}-${n.slice(7)}`
 }
@@ -31,20 +31,10 @@ const REGRAS = {
     const n = v.replace(/\D/g, '')
     return n.length < 10 || n.length > 11 ? 'Informe um WhatsApp válido, com DDD.' : ''
   },
-  email: (v) => (v.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? 'Informe um e-mail válido.' : ''),
   servico: (v) => (!v ? 'Escolha o tipo de serviço.' : ''),
   data: (v) => (v && v < hojeISO() ? 'Escolha uma data a partir de hoje.' : ''),
   cidade: () => '',
   mensagem: (v) => (v.length > 1000 ? 'A mensagem pode ter até 1000 caracteres.' : ''),
-}
-
-function validar(dados) {
-  const erros = {}
-  Object.keys(REGRAS).forEach((campo) => {
-    const msg = REGRAS[campo](dados[campo])
-    if (msg) erros[campo] = msg
-  })
-  return erros
 }
 
 const formatarData = (iso) => (iso ? iso.split('-').reverse().join('/') : '')
@@ -53,12 +43,11 @@ const formatarData = (iso) => (iso ? iso.split('-').reverse().join('/') : '')
 function montarMensagem(d) {
   const linhas = [
     `Olá, Rafa! Meu nome é ${d.nome.trim()} e gostaria de solicitar atendimento.`,
-    '',
+    ``,
     `Serviço: ${d.servico}`,
     d.data && `Data desejada: ${formatarData(d.data)}`,
     d.cidade.trim() && `Cidade: ${d.cidade.trim()}`,
-    `WhatsApp: ${d.whatsapp}`,
-    d.email.trim() && `E-mail: ${d.email.trim()}`,
+    d.whatsapp.trim() && `WhatsApp: ${d.whatsapp}`,
     d.mensagem.trim() && `Mensagem: ${d.mensagem.trim()}`,
   ]
   return linhas.filter((l) => l !== '' ? Boolean(l) : true).join('\n')
@@ -70,7 +59,7 @@ function Campo({ id, rotulo, erro, obrigatorio, children }) {
     <div className={`campo${erro ? ' campo--erro' : ''}`}>
       <label htmlFor={id}>
         {rotulo}
-        {obrigatorio && <span className="campo__obrigatorio" aria-hidden="true"> *</span>}
+        {obrigatorio && <span className="campo__obrigatorio" aria-hidden="true">*</span>}
       </label>
       {children}
       {erro && <p id={`${id}-erro`} className="campo__erro" role="alert">{erro}</p>}
@@ -100,7 +89,7 @@ export default function ContactForm() {
 
   async function aoEnviar(e) {
     e.preventDefault()
-    if (dados.empresa) return // campo escondido: só robôs preenchem
+    if (dados.empresa) return // campo escondido só robôs preenchem
 
     const novosErros = validar(dados)
     setErros(novosErros)
@@ -117,7 +106,7 @@ export default function ContactForm() {
     // Abre o WhatsApp já com o pedido preenchido
     if (link.startsWith('http')) window.open(link, '_blank', 'noopener,noreferrer')
 
-    // Salva no Supabase (só acontece se ele estiver configurado — veja src/lib/leads.js)
+    // Salva no Supabase (se acontece se ele estiver configurado, veja src/lib/leads.js)
     try {
       await salvarLead(dados)
     } catch (erro) {
@@ -126,6 +115,15 @@ export default function ContactForm() {
 
     setStatus('enviado')
     setDados(VAZIO)
+  }
+
+  function validar(dadosAtuais) {
+    const errs = {}
+    Object.keys(REGRAS).forEach((campo) => {
+      const msg = REGRAS[campo](dadosAtuais[campo])
+      if (msg) errs[campo] = msg
+    })
+    return errs
   }
 
   return (
@@ -146,7 +144,7 @@ export default function ContactForm() {
 
         <Reveal className="contato__formulario" delay={100}>
           {status === 'enviado' ? (
-            <div className="sucesso" role="status">
+            <div className="formulario__sucesso" role="status">
               <h3>Pedido pronto para enviar</h3>
               <p>
                 Abrimos o WhatsApp com os seus dados preenchidos. Basta tocar em enviar para que {NOME_DA_MARCA} receba sua mensagem.
@@ -177,9 +175,6 @@ export default function ContactForm() {
               </div>
 
               <div className="formulario__linha">
-                <Campo id="email" rotulo="E-mail" erro={erros.email}>
-                  <input type="email" autoComplete="email" {...propsCampo('email')} />
-                </Campo>
                 <Campo id="servico" rotulo="Tipo de serviço" erro={erros.servico} obrigatorio>
                   <select {...propsCampo('servico')}>
                     <option value="">Selecione</option>
