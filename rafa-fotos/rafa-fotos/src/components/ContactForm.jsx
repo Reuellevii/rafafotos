@@ -6,7 +6,7 @@ import { salvarLead } from '../lib/leads'
 import Reveal from './Reveal'
 import { IconInstagram, IconPin, IconWhatsApp } from './Icons'
 
-const VAZIO = { nome: '', whatsapp: '', email: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
+const VAZIO = { nome: '', whatsapp: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
 
 const hojeISO = () => {
   const d = new Date()
@@ -28,7 +28,6 @@ const REGRAS = {
     const n = v.replace(/\D/g, '')
     return n.length < 10 || n.length > 11 ? 'Informe um WhatsApp válido, com DDD.' : ''
   },
-  email: (v) => (v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? 'Informe um e-mail válido.' : ''),
   servico: (v) => (!v ? 'Escolha o tipo de serviço.' : ''),
   data: (v) => (v && v < hojeISO() ? 'Escolha uma data a partir de hoje.' : ''),
   cidade: () => '',
@@ -45,7 +44,6 @@ function montarMensagem(d) {
     d.data && `Data desejada: ${formatarData(d.data)}`,
     d.cidade.trim() && `Cidade: ${d.cidade.trim()}`,
     d.whatsapp.trim() && `WhatsApp: ${d.whatsapp}`,
-    d.email.trim() && `E-mail: ${d.email.trim()}`,
     d.mensagem.trim() && `Mensagem: ${d.mensagem.trim()}`,
   ]
   return linhas.filter((l) => l !== '' ? Boolean(l) : true).join('\n')
@@ -169,9 +167,6 @@ export default function ContactForm() {
               </div>
 
               <div className="formulario__linha">
-                <Campo id="email" rotulo="E-mail" erro={erros.email}>
-                  <input type="email" autoComplete="email" placeholder="seu@email.com" {...propsCampo('email')} />
-                </Campo>
                 <Campo id="servico" rotulo="Tipo de serviço" erro={erros.servico} obrigatorio>
                   <select {...propsCampo('servico')}>
                     <option value="">Selecione</option>
