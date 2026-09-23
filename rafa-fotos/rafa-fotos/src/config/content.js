@@ -19,8 +19,9 @@ export const HERO = {
     'Fotografia profissional para transformar momentos especiais em memórias que permanecem.',
   botaoPortfolio: 'Conheça meu trabalho',
   botaoWhatsapp: 'Falar no WhatsApp',
+  botaoBanlek: 'Compre sua foto aqui',
+  banlekUrl: 'https://banlek.com/rafafotosoros',
 }
-
 export const SOBRE = {
   titulo: 'Por trás das lentes',
   saudacao: 'Olá, eu sou o Rafa Fotos.',
