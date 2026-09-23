@@ -8,6 +8,7 @@ export const MENU = [
   { rotulo: 'Sobre', alvo: '#sobre' },
   { rotulo: 'Portfólio', alvo: '#portfolio' },
   { rotulo: 'Serviços', alvo: '#servicos' },
+  { rotulo: 'Banlek', alvo: 'https://banlek.com/rafafotosoros' },
   { rotulo: 'Depoimentos', alvo: '#depoimentos' },
   { rotulo: 'Contato', alvo: '#contato' },
 ]
