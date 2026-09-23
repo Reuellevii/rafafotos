@@ -4,7 +4,7 @@ import { NOME_DA_MARCA, INSTAGRAM_URL, EMAIL, CIDADE } from '../config/site'
 import whatsappLink from '../lib/whatsapp'
 import salvarLead from '../lib/leads'
 import Reveal from './Reveal'
-import { IconInstagram, IconMail, IconPin, IconWhatsApp } from './Icons'
+import { IconInstagram, IconPin, IconWhatsApp } from './Icons'
 
 const VAZIO = { nome: '', whatsapp: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
 
@@ -137,7 +137,6 @@ export default function ContactForm() {
             {INSTAGRAM_URL && (
               <li><IconInstagram size={20} /><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a></li>
             )}
-            {EMAIL && <li><IconMail size={20} /><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>}
             {CIDADE && <li><IconPin size={20} /><span>{CIDADE}</span></li>}
           </ul>
         </Reveal>
