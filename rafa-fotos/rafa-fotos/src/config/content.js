@@ -56,19 +56,9 @@ export const SERVICOS_BOTAO = 'Quero saber mais'
 
 export const SERVICOS = [
   {
-    id: 'casamentos',
-    titulo: 'Casamentos',
-    descricao:
-      'Registro dos momentos mais importantes do seu grande dia, com fotografias espontâneas, emocionantes e atemporais.',
-    imagem: '/images/servicos/casamentos.jpg', // TEMPORÁRIA — substituir
-    alt: 'Casal em abraço afetuoso, de rosa, em estúdio',
-    mensagem: 'Olá, Rafa! Gostaria de saber mais sobre o serviço de fotografia de casamento.',
-  },
-  {
     id: 'ensaios',
     titulo: 'Ensaios',
-    descricao:
-      'Ensaios individuais, de casal e familiares, planejados para revelar a personalidade e a conexão de cada pessoa.',
+    descricao: 'Ensaios individuais, de casal e familiares, planejados para revelar a personalidade e a conexão de cada pessoa.',
     imagem: '/images/servicos/ensaios.jpg',
     alt: 'Família em tons de azul durante ensaio',
     mensagem: 'Olá, Rafa! Gostaria de saber mais sobre os ensaios fotográficos (individual, casal ou família).',
@@ -105,8 +95,15 @@ export const SERVICOS = [
     alt: 'Decoração e momentos de festa de aniversário',
     mensagem: 'Olá, Rafa! Gostaria de saber mais sobre a fotografia de aniversários.',
   },
+  {
+    id: 'casamentos',
+    titulo: 'Casamentos',
+    descricao: 'Registro dos momentos mais importantes do seu grande dia, com fotografias espontâneas, emocionantes e atemporais.',
+    imagem: '/images/servicos/casamentos.jpg', // TEMPORÁRIA – substituir
+    alt: 'Casal em abraço afetuoso, de rosa, em estúdio',
+    mensagem: 'Olá, Rafa! Gostaria de saber mais sobre o serviço de fotografia de casamento.',
+  },
 ]
-
 export const DIFERENCIAIS = {
   titulo: 'Mais do que fotografias. Histórias para guardar.',
   itens: [
