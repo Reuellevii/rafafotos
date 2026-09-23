@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CONTATO } from '../config/content'
 import { NOME_DA_MARCA, INSTAGRAM_URL, CIDADE } from '../config/site'
 import { whatsappLink } from '../lib/whatsapp'
-import salvarLead from '../lib/leads'
+import { salvarLead } from '../lib/leads'
 import Reveal from './Reveal'
 import { IconInstagram, IconPin, IconWhatsApp } from './Icons'
 
