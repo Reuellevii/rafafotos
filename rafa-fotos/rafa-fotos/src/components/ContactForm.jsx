@@ -1,21 +1,18 @@
 import { useState } from 'react'
 import { CONTATO } from '../config/content'
-import { NOME_DA_MARCA, INSTAGRAM_URL, EMAIL, CIDADE } from '../config/site'
+import { NOME_DA_MARCA, INSTAGRAM_URL, CIDADE } from '../config/site'
 import whatsappLink from '../lib/whatsapp'
-import salvarLead from '../lib/leads'
 import Reveal from './Reveal'
 import { IconInstagram, IconPin, IconWhatsApp } from './Icons'
 
 const VAZIO = { nome: '', whatsapp: '', servico: '', data: '', cidade: '', mensagem: '', empresa: '' }
 
-// Data de hoje no formato aaaa-mm-dd (para bloquear datas passadas)
 const hojeISO = () => {
   const d = new Date()
   d.setMinutes(d.getMinutes() - d.getTimezoneOffset())
   return d.toISOString().slice(0, 10)
 }
 
-// Máscara de telefone brasileiro: (88) 99999-9999
 function mascaraTelefone(valor) {
   const n = valor.replace(/\D/g, '').slice(0, 11)
   if (n.length <= 2) return n
@@ -24,7 +21,6 @@ function mascaraTelefone(valor) {
   return `(${n.slice(0, 2)}) ${n.slice(2, 7)}-${n.slice(7)}`
 }
 
-// Regras de validação de cada campo (devolve o texto do erro ou '')
 const REGRAS = {
   nome: (v) => (v.trim().length < 2 ? 'Informe seu nome.' : ''),
   whatsapp: (v) => {
@@ -39,7 +35,6 @@ const REGRAS = {
 
 const formatarData = (iso) => (iso ? iso.split('-').reverse().join('/') : '')
 
-// Texto que vai para o WhatsApp com os dados preenchidos
 function montarMensagem(d) {
   const linhas = [
     `Olá, Rafa! Meu nome é ${d.nome.trim()} e gostaria de solicitar atendimento.`,
@@ -53,7 +48,6 @@ function montarMensagem(d) {
   return linhas.filter((l) => l !== '' ? Boolean(l) : true).join('\n')
 }
 
-// Campo reutilizável (rótulo + campo + mensagem de erro)
 function Campo({ id, rotulo, erro, obrigatorio, children }) {
   return (
     <div className={`campo${erro ? ' campo--erro' : ''}`}>
@@ -70,7 +64,7 @@ function Campo({ id, rotulo, erro, obrigatorio, children }) {
 export default function ContactForm() {
   const [dados, setDados] = useState(VAZIO)
   const [erros, setErros] = useState({})
-  const [status, setStatus] = useState('parado') // parado | enviando | enviado | falhou
+  const [status, setStatus] = useState('parado')
   const [linkEnvio, setLinkEnvio] = useState('')
 
   const propsCampo = (id) => ({
@@ -87,9 +81,9 @@ export default function ContactForm() {
     onBlur: () => setErros((er) => ({ ...er, [id]: REGRAS[id](dados[id]) })),
   })
 
-  async function aoEnviar(e) {
+  function aoEnviar(e) {
     e.preventDefault()
-    if (dados.empresa) return // campo escondido só robôs preenchem
+    if (dados.empresa) return
 
     const novosErros = validar(dados)
     setErros(novosErros)
@@ -103,15 +97,7 @@ export default function ContactForm() {
     const link = whatsappLink(montarMensagem(dados))
     setLinkEnvio(link)
 
-    // Abre o WhatsApp já com o pedido preenchido
     if (link.startsWith('http')) window.open(link, '_blank', 'noopener,noreferrer')
-
-    // Salva no Supabase (se acontece se ele estiver configurado, veja src/lib/leads.js)
-    try {
-      await salvarLead(dados)
-    } catch (erro) {
-      console.error('Não foi possível salvar o pedido:', erro)
-    }
 
     setStatus('enviado')
     setDados(VAZIO)
