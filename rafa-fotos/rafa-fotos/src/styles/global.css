@@ -437,17 +437,25 @@ button { font: inherit; color: inherit; }
 /* ==========================================================================
    RODAPÉ
    ========================================================================== */
-.rodape { background: var(--preto); color: rgba(255, 255, 255, 0.66); padding-top: clamp(56px, 7vw, 90px); }
-.rodape__grade { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; padding-bottom: 56px; }
+.rodape { background: var(--preto); color: rgba(255, 255, 255, 0.66); padding-top: clamp(64px, 8vw, 100px); }
+.rodape__grade { 
+  display: grid; 
+  grid-template-columns: 2fr 1fr 1fr; 
+  gap: clamp(40px, 6vw, 80px); 
+  padding-bottom: clamp(64px, 8vw, 90px); 
+  align-items: start;
+}
 .marca--rodape { color: #fff; font-size: 2.1rem; margin-bottom: 14px; }
-.rodape__marca p { max-width: 24rem; }
-.rodape__cidade { margin-top: 8px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.5); }
-.rodape__links, .rodape__redes { display: grid; gap: 4px; align-content: start; }
+.rodape__marca p { max-width: 28rem; line-height: 1.7; }
+.rodape__cidade { margin-top: 12px; font-size: 0.92rem; color: rgba(255, 255, 255, 0.5); }
+.rodape__links, .rodape__redes { display: grid; gap: 8px; align-content: start; }
 .rodape a { display: inline-flex; align-items: center; gap: 10px; padding: 6px 0; text-decoration: none; transition: color 0.3s ease; }
 .rodape a:hover { color: var(--ouro-claro); }
-.rodape__direitos { padding-block: 24px 30px; border-top: 1px solid var(--linha-clara); font-size: 0.86rem; color: rgba(255, 255, 255, 0.46); }
-@media (max-width: 760px) { .rodape__grade { grid-template-columns: 1fr; gap: 28px; } }
+.rodape__direitos { padding-block: 28px 32px; border-top: 1px solid var(--linha-clara); font-size: 0.86rem; color: rgba(255, 255, 255, 0.46); }
 
+@media (max-width: 860px) { 
+  .rodape__grade { grid-template-columns: 1fr; gap: 36px; } 
+}
 /* ==========================================================================
    BOTÃO FLUTUANTE DO WHATSAPP
    ========================================================================== */
