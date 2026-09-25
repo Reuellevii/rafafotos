@@ -127,14 +127,26 @@ export default function ContactForm() {
         <p className="subtitulo-secao">{CONTATO.texto}</p>
         <ul className="contato__lista">
           <li>
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="contato__link">
+            <a 
+              href={whatsappLink()} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="contato__link"
+              style={{ display: 'inline-flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}
+            >
               <IconWhatsApp size={20} />
               <span>Conversar no WhatsApp</span>
             </a>
           </li>
           {INSTAGRAM_URL && (
             <li>
-              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="contato__link">
+              <a 
+                href={INSTAGRAM_URL} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contato__link"
+                style={{ display: 'inline-flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}
+              >
                 <IconInstagram size={20} />
                 <span>Instagram</span>
               </a>
@@ -142,8 +154,10 @@ export default function ContactForm() {
           )}
           {CIDADE && (
             <li>
-              <IconPin size={20} />
-              <span>{CIDADE}</span>
+              <div style={{ display: 'inline-flex', flexDirection: 'row', alignItems: 'center', gap: '8px' }}>
+                <IconPin size={20} />
+                <span>{CIDADE}</span>
+              </div>
             </li>
           )}
         </ul>
