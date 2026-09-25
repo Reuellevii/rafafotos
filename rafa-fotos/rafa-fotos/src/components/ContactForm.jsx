@@ -120,19 +120,34 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contato" className="contato" aria-labelledby="contato-titulo">
-      <div className="container contato__grade">
-        <Reveal className="contato__info">
-          <h2 id="contato-titulo" className="titulo-secao">{CONTATO.titulo}</h2>
-          <p className="subtitulo-secao">{CONTATO.texto}</p>
-          <ul className="contato__lista">
-            <li><IconWhatsApp size={20} /><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></li>
-            {INSTAGRAM_URL && (
-              <li><IconInstagram size={20} /><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            )}
-            {CIDADE && <li><IconPin size={20} /><span>{CIDADE}</span></li>}
-          </ul>
-        </Reveal>
+  <section id="contato" className="contato" aria-labelledby="contato-titulo">
+    <div className="container contato__grade">
+      <Reveal className="contato__info">
+        <h2 id="contato-titulo" className="titulo-secao">{CONTATO.titulo}</h2>
+        <p className="subtitulo-secao">{CONTATO.texto}</p>
+        <ul className="contato__lista">
+          <li>
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="contato__link">
+              <IconWhatsApp size={20} />
+              <span>Conversar no WhatsApp</span>
+            </a>
+          </li>
+          {INSTAGRAM_URL && (
+            <li>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="contato__link">
+                <IconInstagram size={20} />
+                <span>Instagram</span>
+              </a>
+            </li>
+          )}
+          {CIDADE && (
+            <li>
+              <IconPin size={20} />
+              <span>{CIDADE}</span>
+            </li>
+          )}
+        </ul>
+      </Reveal>
 
         <Reveal className="contato__formulario" delay={100}>
           {status === 'enviado' ? (
