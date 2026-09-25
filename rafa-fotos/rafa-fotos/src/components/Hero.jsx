@@ -25,8 +25,8 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Localização discreta abaixo dos botões */}
-        <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+        {/* Localização ajustada: +10% opacidade, um pouco mais abaixo e ligeiramente maior */}
+        <div style={{ marginTop: '18px', display: 'flex', alignItems: 'center' }}>
           <a
             href="https://maps.app.goo.gl/EnFxiZwRVCq2Hkqy7"
             target="_blank"
@@ -34,16 +34,16 @@ export default function Hero() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '13px',
-              color: 'rgba(255, 255, 255, 0.35)',
+              gap: '7px',
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.45)',
               textDecoration: 'none',
               transition: 'color 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.75)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.35)')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.45)')}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.6 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.75 }}>
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
             </svg>
             <span>Localização</span>
