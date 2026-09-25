@@ -24,6 +24,7 @@ export default function Hero() {
             {HERO.botaoBanlek}
           </a>
         </div>
+
         {/* Localização discreta abaixo dos botões */}
         <div style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
           <a
@@ -48,6 +49,7 @@ export default function Hero() {
             <span>Localização</span>
           </a>
         </div>
+      </div>
 
       <a href="#sobre" className="hero__rolar" aria-label="Rolar para a próxima seção">
         <span className="hero__rolar-linha" aria-hidden="true" />
