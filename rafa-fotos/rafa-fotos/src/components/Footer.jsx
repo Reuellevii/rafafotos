@@ -32,6 +32,11 @@ export default function Footer() {
           <li>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><IconWhatsApp size={20} /> WhatsApp</a>
           </li>
+          <li>
+            <a href="https://banlek.com/rafafotosoros" target="_blank" rel="noopener noreferrer">
+              Banlek
+            </a>
+          </li>
           {EMAIL && (
             <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
           )}
