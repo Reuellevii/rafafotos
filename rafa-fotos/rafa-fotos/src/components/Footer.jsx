@@ -1,7 +1,7 @@
 import { NOME_DA_MARCA, INSTAGRAM_URL, EMAIL, CIDADE } from '../config/site'
 import { RODAPE, DEPOIMENTOS } from '../config/content'
 import { whatsappLink } from '../lib/whatsapp'
-import { IconInstagram, IconWhatsApp } from './Icons'
+import { IconInstagram, IconWhatsApp, IconCamera } from './Icons';
 
 export default function Footer() {
   return (
@@ -34,7 +34,7 @@ export default function Footer() {
           </li>
           <li>
             <a href="https://banlek.com/rafafotosoros" target="_blank" rel="noopener noreferrer">
-              Banlek
+              <IconCamera size={20} /> Banlek
             </a>
           </li>
           {EMAIL && (
