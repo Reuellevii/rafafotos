@@ -17,7 +17,7 @@ export default function Hero() {
         <p className="hero__texto">{HERO.texto}</p>
         <div className="hero__botoes">
           <a className="btn btn--ouro" href="#portfolio">{HERO.botaoPortfolio}</a>
-          <a className="btn btn--contorno" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn--contorno" href={whatsappLink()} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <IconWhatsApp size={18} /> {HERO.botaoWhatsapp}
           </a>
           <a className="btn btn--contorno" href={HERO.banlekUrl} target="_blank" rel="noopener noreferrer">
