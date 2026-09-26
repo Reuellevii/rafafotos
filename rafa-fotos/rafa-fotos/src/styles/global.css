@@ -121,7 +121,7 @@ button { font: inherit; color: inherit; }
 }
 .header__interno {
   height: var(--altura-menu); max-width: 1320px; margin-inline: auto; padding-inline: var(--lateral);
-  display: flex; align-items: center; justify-content: center; gap: 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
   position: relative; z-index: 2;
 }
 .marca { font-family: var(--serif); font-size: 1.85rem; line-height: 1; text-decoration: none; letter-spacing: 0.005em; }
